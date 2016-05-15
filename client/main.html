@@ -1,0 +1,34 @@
+<head>
+    <title>simple</title>
+</head>
+
+<body>
+    <h1>Add daily task</h1>
+    <div class="container">
+        <div class="row">
+            <form class="form form-horizontal formTasks" style="margin-bottom: 0;">
+                <div class="col-sm-6 col-md-9">
+                    <div class="input-group">
+                        <input class="form-control input-lg" id="txtTask" name="title" placeholder="enter your task" type="text">
+                        <div class="input-group-btn">
+                            <input type="submit" class="btn btn-primary btn-lg btnAddTask" value="Add" id="btnAddTask" style="margin-bottom:5px" />
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 col-sx-6 col-md-offset-1">
+            {{#each tasks}} {{>task}} {{/each}}
+        </div>
+    </div>
+</body>
+<template name="task" class="templateTasks">
+    <div>
+        <span style="color: #FFF;">{{title}}</span>
+        <button class="btn btn-primary delete">Remove</button>
+        <hr class="alert-custom">
+    </div>
+</template>
